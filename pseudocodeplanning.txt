@@ -1,16 +1,32 @@
 Create function getComputerChoice
 Choose Random from "rock, paper, scissors"
 
-Create the function named "getComputerChoice"
-    Create choiceNum variable
-    Assign choiceNum a random number from 0-2 
-    IF  choiceNum = 0
-    THEN
-        Assign getComputerChoice "Rock"
-    ELSE IF choiceNum = 1
-        Assign getComputerChoice "Paper"
-    ELSE
-        Assign getComputerChoice "Scissors"
-    ENDIF
-CALL getComputerChoice function
-Print value of getComputerChoice to the console
+    Create the function named "getComputerChoice"
+        Create choiceNum variable
+        Assign choiceNum a random number from 0-2 
+        IF  choiceNum = 0
+        THEN
+            Assign getComputerChoice "rock"  //CHANGED RETURNS TO LOWERCASE - make later script simpler
+        ELSE IF choiceNum = 1
+            Assign getComputerChoice "paper"
+        ELSE
+            Assign getComputerChoice "scissors"
+        ENDIF
+    CALL getComputerChoice function
+    Print value of getComputerChoice to the console
+
+Create "Human Choice" Componenet
+    Create function getHumanChoice
+    Create variable humanChoice
+    Prompt User to "Enter Rock Paper or Scissors" - assume will correctly enter choice
+        Transform answer to lowercase and trim off whitespaces
+        IF any of rock paper scissors then assign to humanChoice 
+            (Print value of getHumanChoice to console)
+        ELSE Prompt Incorrect Entry, please try again
+        ENDIF
+    Call getHumanChoice function
+
+//Not here yet
+//Create Comparisson/Winner Logic
+//Create chooseWinner function - to compare human and computer choices
+//    Declare winner
