@@ -21,10 +21,10 @@ Create "Human Choice" Componenet
     Prompt User to "Enter Rock Paper or Scissors" - assume will correctly enter choice
     -------------strikeout----Create variable trimHumanChoice-----use FUNCTION name as variable, was original intent, but made a mistake
         Transform answer to lowercase and trim off whitespaces
-        IF any of rock paper scissors then assign to trimHumanChoice 
+        --IF-- any of rock paper scissors then assign to trimHumanChoice - normally would incl this if function, but instructions say to assume correct entry. rest of this line is to be used.
             (Print value of trimHumanChoice to console)
-        ELSE Prompt Incorrect Entry, please try again
-        ENDIF
+        -------ELSE Prompt Incorrect Entry, please try again------ dont use line, part of assume correct opt chosen
+        -------ENDIF------ dont use line, part of assume correct opt chose
     Call getHumanChoice function
 
 //Not here yet

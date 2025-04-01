@@ -9,15 +9,16 @@ function getComputerChoice () { // Create the function named "getComputerChoice"
     }                                           // ENDIF
 }
 getComputerChoice();               // CALL getComputerChoice function
-console.log(getComputerChoice);    // Print value of getComputerChoice to the console
+console.log("Computer: " + getComputerChoice);    // Print value of getComputerChoice to the console
 
 
 function getHumanChoice () {    //     Create function getHumanChoice
     let humanChoice = prompt( "Choose & enter one of: Rock Paper or Scissors");     // Create variable humanChoice, Prompt User to "Enter Rock Paper or Scissors"
     getHumanChoice = humanChoice.trim().toLowerCase();     // Create variable trimHumanChoice & Transform answer to lowercase and trim off whitespaces
+    //normally would check that its actually one of the options, but not bothering here, as instructed.
 }
 getHumanChoice();
-console.log(getHumanChoice)
+console.log("User: " + getHumanChoice)
 
 
     //  - assume will correctly enter choice
