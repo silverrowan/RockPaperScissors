@@ -46,3 +46,4 @@ Create chooseWinner function - to compare human and computer choices
             add one to the computerScore
         ENDIF
     ENDIF
+    CALL chooseWinner Function
