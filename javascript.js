@@ -14,8 +14,7 @@ console.log(getComputerChoice);    // Print value of getComputerChoice to the co
 
 function getHumanChoice () {    //     Create function getHumanChoice
     let humanChoice = prompt( "Choose & enter one of: Rock Paper or Scissors");     // Create variable humanChoice, Prompt User to "Enter Rock Paper or Scissors"
-    let trimHumanChoice = humanChoice.trim().toLowerCase();     // Create variable trimHumanChoice & Transform answer to lowercase and trim off whitespaces
-    console.log(trimHumanChoice);
+    getHumanChoice = humanChoice.trim().toLowerCase();     // Create variable trimHumanChoice & Transform answer to lowercase and trim off whitespaces
 }
 getHumanChoice();
 console.log(getHumanChoice)

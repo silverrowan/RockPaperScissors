@@ -19,7 +19,7 @@ Create "Human Choice" Componenet
     Create function getHumanChoice
     Create variable humanChoice
     Prompt User to "Enter Rock Paper or Scissors" - assume will correctly enter choice
-        Create variable trimHumanChoice
+    -------------strikeout----Create variable trimHumanChoice-----use FUNCTION name as variable, was original intent, but made a mistake
         Transform answer to lowercase and trim off whitespaces
         IF any of rock paper scissors then assign to trimHumanChoice 
             (Print value of trimHumanChoice to console)
