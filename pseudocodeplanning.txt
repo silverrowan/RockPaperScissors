@@ -12,4 +12,5 @@ Create the function named "getComputerChoice"
     ELSE
         Assign getComputerChoice "Scissors"
     ENDIF
-    Print value of getComputerChoice to the console
+CALL getComputerChoice function
+Print value of getComputerChoice to the console
