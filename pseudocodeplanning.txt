@@ -26,8 +26,23 @@ Create "Human Choice" Componenet
         -------ELSE Prompt Incorrect Entry, please try again------ dont use line, part of assume correct opt chosen
         -------ENDIF------ dont use line, part of assume correct opt chose
     Call getHumanChoice function
+    Print getHumanChoice to console (for clarity)
 
-//Not here yet
-//Create Comparisson/Winner Logic
-//Create chooseWinner function - to compare human and computer choices
-//    Declare winner
+Create Comparisson/Winner Logic
+Create chooseWinner function - to compare human and computer choices
+    Create computerScore variable
+    Create humanScore variable
+    Create tieCount variable
+    IF the getComputerChoice and getHumanChoice have the same value
+    THEN print "Tie" to the console. 
+        add one to the tieCount variable
+    ELSE
+        IF getComputerChoice is rock and getHumanChoice is paper, 
+            or getComputerChoice is paper and getHumanChoice is scissors,
+            or compgetComputerChoice is scissors and getHumanChoice is rock
+        THEN print "User Wins"
+            add one to the humanScore
+        ELSE print "Computer Wins"
+            add one to the computerScore
+        ENDIF
+    ENDIF
