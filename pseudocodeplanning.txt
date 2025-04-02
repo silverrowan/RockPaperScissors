@@ -1,4 +1,4 @@
-Create function getComputerChoice
+--CREATE FUNCTION getComputerChoice--
 Choose Random from "rock, paper, scissors"
 
     Create the function named "getComputerChoice"
@@ -15,7 +15,7 @@ Choose Random from "rock, paper, scissors"
     CALL getComputerChoice function
     Print value of getComputerChoice to the console
 
-Create "Human Choice" Componenet
+--CREATE FUNCTION getHumanChoice--
     Create function getHumanChoice
     Create variable humanChoice
     Prompt User to "Enter Rock Paper or Scissors" - assume will correctly enter choice
@@ -28,22 +28,32 @@ Create "Human Choice" Componenet
     Call getHumanChoice function
     Print getHumanChoice to console (for clarity)
 
-Create Comparisson/Winner Logic
-Create chooseWinner function - to compare human and computer choices
-    Create computerScore variable
-    Create humanScore variable
+
+--CREATE GLOBAL VARIABLES - SCORE--
+Create global variable humanScore, initial value of 0
+Create global variable computerScore, initial value of 0
+
+
+--CREATE FUNCTION playRound-- (Comparisson/Winner Logic & Score increment)
+Create playRound function - with parameters "humanChoice" and "computerChoice"
+
     Create tieCount variable
-    IF the getComputerChoice and getHumanChoice have the same value
+    IF the computerChoice and humanChoice have the same value
     THEN print "Tie" to the console. 
-        add one to the tieCount variable
+    //    add one to the tieCount variable - no tieCount variable in assignment
     ELSE
-        IF getComputerChoice is rock and getHumanChoice is paper, 
-            or getComputerChoice is paper and getHumanChoice is scissors,
-            or compgetComputerChoice is scissors and getHumanChoice is rock
-        THEN print "User Wins"
+        IF computerChoice is rock and humanChoice is paper, 
+            or computerChoice is paper and humanChoice is scissors,
+            or computerChoice is scissors and humanChoice is rock
+        THEN print "User Wins, --variable humanChoice-- beats --variable computerChoice"
             add one to the humanScore
         ELSE print "Computer Wins"
             add one to the computerScore
         ENDIF
+    Print to console: Score: User: --variable humanScore--, Computer --variable computerScore
     ENDIF
-    CALL chooseWinner Function
+    CALL playRound Function
+
+
+
+--CREATE FUNCTION newRound--
