@@ -24,17 +24,17 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound (humanChoice, computerChoice) {                          // compare human and computer choices
-    if (getComputerChoice === getHumanChoice) {     // if same value, then report "Tie"
+    if (computerChoice === humanChoice) {     // if same value, then report "Tie"
         console.log("Tie");
-    } else if (getComputerChoice === "rock" && getHumanChoice === "paper" ||         // IF getComputerChoice is rock and getHumanChoice is paper, 
-        getComputerChoice === "paper" && getHumanChoice === "scissors" ||            // or getComputerChoice is paper and getHumanChoice is scissors,
-        getComputerChoice === "scissors" && getHumanChoice === "rock") {             // or compgetComputerChoice is scissors and getHumanChoice is rock
-            console.log("User wins!");               // THEN print "User Wins"
+    } else if (computerChoice === "rock" && humanChoice === "paper" ||         // IF getComputerChoice is rock and getHumanChoice is paper, 
+        computerChoice === "paper" && humanChoice === "scissors" ||            // or getComputerChoice is paper and getHumanChoice is scissors,
+        computerChoice === "scissors" && humanChoice === "rock") {             // or compgetComputerChoice is scissors and getHumanChoice is rock
+            console.log(`User wins, ${humanChoice} beats ${computerChoice}!`);               // THEN print "User Wins"
             ++ humanScore;
     } else { 
-        console.log("Computer Wins!");         // ELSE print "Computer Wins"
+        console.log(`Computer Wins, ${computerChoice} beats ${humanChoice}!`);         // ELSE print "Computer Wins"
         ++ computerScore;
     }
     console.log("Score: User: " + humanScore + ", Computer: " + computerScore)
 }
-playRound();
+playRound(getHumanChoice, getComputerChoice);
