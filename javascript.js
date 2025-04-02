@@ -25,6 +25,8 @@ let computerScore = 0;
 
 function playGame () {
     function playRound (humanChoice, computerChoice) {                          // compare human and computer choices
+        console.log("Computer: " + computerChoice);
+        console.log("User: " + humanChoice);
         if (computerChoice === humanChoice) {     // if same value, then report "Tie"
             console.log("Tie");
         } else if (computerChoice === "rock" && humanChoice === "paper" ||         // IF getComputerChoice is rock and getHumanChoice is paper, 
@@ -36,8 +38,6 @@ function playGame () {
             console.log(`Computer Wins, ${computerChoice} beats ${humanChoice}!`);         // ELSE print "Computer Wins"
             ++ computerScore;
         }
-        console.log("Computer: " + computerChoice);
-        console.log("User: " + humanChoice);
         console.log("Score: User: " + humanScore + ", Computer: " + computerScore)
     }
     playRound(getHumanChoice(), getComputerChoice());
