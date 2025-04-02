@@ -19,14 +19,17 @@ function getComputerChoice () {
     return computerChoice;
 }
 
+function cleanResponse (responseRaw) { //specifically, trimmed & lower case
+    let response = responseRaw.trim().toLowerCase();
+    return response;
+}
 
 function getHumanChoice () {                      
     let humanChoiceRaw = prompt( "Choose & enter one of: Rock Paper or Scissors");
-    humanChoice = humanChoiceRaw.trim().toLowerCase(); // transform answer to lowercase and trim off whitespaces
+    humanChoice = cleanResponse (humanChoiceRaw);
     //normally would check that its actually one of the options & re-prompt if not, but not bothering here, as instructed.
     return humanChoice;
 }
-
 
 let humanScore = 0;
 let computerScore = 0;
