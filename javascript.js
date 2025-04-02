@@ -7,18 +7,20 @@ function getComputerChoice () {
     } else {                                    
         getComputerChoice = "scissors";         
     }                                          
+    return getComputerChoice;
 }
-getComputerChoice();                             
-console.log("Computer: " + getComputerChoice);  
+//getComputerChoice();                             
+//console.log("Computer: " + getComputerChoice);  
 
 
 function getHumanChoice () {                      
     let humanChoice = prompt( "Choose & enter one of: Rock Paper or Scissors");
     getHumanChoice = humanChoice.trim().toLowerCase();     // Create variable trimHumanChoice & transform answer to lowercase and trim off whitespaces
     //normally would check that its actually one of the options & re-prompt if not, but not bothering here, as instructed.
+    return getHumanChoice;
 }
-getHumanChoice();                       // Call getHumanChoice function
-console.log("User: " + getHumanChoice)  //Print user choice to console
+//getHumanChoice();                       // Call getHumanChoice function
+//console.log("User: " + getHumanChoice)  //Print user choice to console
 
 let humanScore = 0;
 let computerScore = 0;
@@ -35,6 +37,8 @@ function playRound (humanChoice, computerChoice) {                          // c
         console.log(`Computer Wins, ${computerChoice} beats ${humanChoice}!`);         // ELSE print "Computer Wins"
         ++ computerScore;
     }
+    console.log("Computer: " + computerChoice);
+    console.log("User: " + humanChoice);
     console.log("Score: User: " + humanScore + ", Computer: " + computerScore)
 }
-playRound(getHumanChoice, getComputerChoice);
+playRound(getHumanChoice(), getComputerChoice());
