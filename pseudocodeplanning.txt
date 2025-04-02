@@ -56,4 +56,13 @@ Create playRound function - with parameters "humanChoice" and "computerChoice"
 
 
 
---CREATE FUNCTION newRound--
+--CREATE FUNCTION playGame--
+Create playGame function
+    Create playRound function (See above, but place inside this function)
+    CALL playRound
+    CALL playRound
+    CALL playRound
+    CALL playRound
+    CALL playRound (call it 5 times)
+
+Call playGame function
