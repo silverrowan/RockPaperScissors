@@ -64,9 +64,12 @@ playGame();
 
 //===============================UI Design===============================
 //create user choice buttons
+let userChoiceOptions = document.createElement('div');
+
 let rockBtn = document.createElement('button');
-rockBtn.setAttribute('id','rock');
 let paperBtn = document.createElement('button');
-paperBtn.setAttribute('id','paper');
 let scissorsBtn = document.createElement('button');
-scissorsBtn.setAttribute('id','scissors');
+
+userChoiceOptions.appendChild(rockBtn);
+userChoiceOptions.appendChild(paperBtn);
+userChoiceOptions.appendChild(scissorsBtn);
