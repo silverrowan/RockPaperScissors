@@ -51,11 +51,11 @@ function playGame () {
         }
         console.log("Score: User: " + humanScore + ", Computer: " + computerScore)
     }
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
+    // playRound(getHumanChoice(), getComputerChoice());
+    // playRound(getHumanChoice(), getComputerChoice());
+    // playRound(getHumanChoice(), getComputerChoice());
+    // playRound(getHumanChoice(), getComputerChoice());
+    // playRound(getHumanChoice(), getComputerChoice());
 }
 
 playGame();
