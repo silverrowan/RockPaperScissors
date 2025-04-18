@@ -21,23 +21,13 @@ function getComputerChoice () {
     return computerChoice;
 }
 
-function cleanResponse (responseRaw) { //specifically, trimmed & lower case
-    let response = responseRaw.trim().toLowerCase();
-    return response;
-}
-
-function getHumanChoice () {                      
-    let humanChoiceRaw = prompt( "Choose & enter one of: Rock Paper or Scissors");
-    humanChoice = cleanResponse (humanChoiceRaw);
-    //normally would check that its actually one of the options & re-prompt if not, but not bothering here, as instructed.
-    return humanChoice;
-}
-
 let humanScore = 0;
 let computerScore = 0;
 
-function playGame () {
     function playRound (humanChoice, computerChoice) {  // compare human and computer choices; nested in playGame per instructions
+        humanChoice = // this doesnt work... rockBtn.textContent || paperBtn.textContent || scissorsBtn.textContent;
+        computerChoice = getComputerChoice();
+
         console.log("Computer: " + computerChoice);
         console.log("User: " + humanChoice);
         if (computerChoice === humanChoice) {
@@ -53,34 +43,31 @@ function playGame () {
         }
         console.log("Score: User: " + humanScore + ", Computer: " + computerScore)
     }
-    // playRound(getHumanChoice(), getComputerChoice());
-    // playRound(getHumanChoice(), getComputerChoice());
-    // playRound(getHumanChoice(), getComputerChoice());
-    // playRound(getHumanChoice(), getComputerChoice());
-    // playRound(getHumanChoice(), getComputerChoice());
-}
-
-playGame();
 
 //===============================UI Design===============================
-//create user choice buttons
 let pageBody = document.querySelector('body');
+
+//create user choice buttons & container
 let userChoiceOptions = document.createElement('div');
 
 let rockBtn = document.createElement('button');
-    rockBtn.textContent = 'Rock';
+    rockBtn.textContent = 'rock';
 let paperBtn = document.createElement('button');
-    paperBtn.textContent = 'Paper';
+    paperBtn.textContent = 'paper';
 let scissorsBtn = document.createElement('button');
-    scissorsBtn.textContent = 'Scissors'
-
+    scissorsBtn.textContent = 'scissors'
   
 userChoiceOptions.appendChild(rockBtn);
 userChoiceOptions.appendChild(paperBtn);
 userChoiceOptions.appendChild(scissorsBtn);
 
-// rockBtn.addEventListener('click', playRound('rock', computerChoice));
-// paperBtn.addEventListener('click', playRound('paper', computerChoice));
-// scissorsBtn.addEventListener('click', playRound('scissors', computerChoice));
+rockBtn.addEventListener('click', playRound);
+paperBtn.addEventListener('click', playRound);
+scissorsBtn.addEventListener('click', playRound);
 
+//create results notification & score tracker
+let resultBox = document.createElement('div')
+
+//put the content on the page
 pageBody.appendChild(userChoiceOptions); 
+pageBody.appendChild(resultBox);
