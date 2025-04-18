@@ -79,8 +79,8 @@ userChoiceOptions.appendChild(rockBtn);
 userChoiceOptions.appendChild(paperBtn);
 userChoiceOptions.appendChild(scissorsBtn);
 
-rockBtn.addEventListener('click', playRound('rock', computerChoice);
-paperBtn.addEventListener('click', playRound('paper', computerChoice);
-scissorsBtn.addEventListener('click', playRound('scissors', computerChoice);
+// rockBtn.addEventListener('click', playRound('rock', computerChoice));
+// paperBtn.addEventListener('click', playRound('paper', computerChoice));
+// scissorsBtn.addEventListener('click', playRound('scissors', computerChoice));
 
 pageBody.appendChild(userChoiceOptions); 
