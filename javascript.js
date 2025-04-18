@@ -25,7 +25,7 @@ let humanScore = 0;
 let computerScore = 0;
 
     function playRound (humanChoice, computerChoice) {  // compare human and computer choices; nested in playGame per instructions
-        humanChoice = // this doesnt work... rockBtn.textContent || paperBtn.textContent || scissorsBtn.textContent;
+        humanChoice = event.currentTarget.innerText //event is depreciated, but how to replace? using Event. Mousevent leads to typeerror. 
         computerChoice = getComputerChoice();
 
         console.log("Computer: " + computerChoice);
