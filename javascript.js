@@ -1,3 +1,5 @@
+//===============================Game code and logic ===============================
+
 function getRandomNum (minValue = 0, maxValue = 100) {
     let randomNum = Math.floor(Math.random() * ((maxValue-minValue) + 1))+ minValue; 
     return randomNum;
@@ -59,3 +61,12 @@ function playGame () {
 }
 
 playGame();
+
+//===============================UI Design===============================
+//create user choice buttons
+let rockBtn = document.createElement('button');
+rockBtn.setAttribute('id','rock');
+let paperBtn = document.createElement('button');
+paperBtn.setAttribute('id','paper');
+let scissorsBtn = document.createElement('button');
+scissorsBtn.setAttribute('id','scissors');
