@@ -25,7 +25,8 @@ let humanScore = 0;
 let computerScore = 0;
 
     function playRound (humanChoice, computerChoice) {  // compare human and computer choices; nested in playGame per instructions
-        humanChoice = event.currentTarget.innerText //event is depreciated, but how to replace? using Event. Mousevent leads to typeerror. 
+        humanChoice = humanChoice.currentTarget.innerText //event.currentTarget.innerText //event is depreciated, but how to replace? using Event. Mousevent leads to typeerror.
+        //wtf why does this work!? how is the event already attributed to humanChoice? This is setting up that link.... 
         computerChoice = getComputerChoice();
 
         console.log("Computer: " + computerChoice);
