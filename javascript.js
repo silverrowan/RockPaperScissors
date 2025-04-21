@@ -29,20 +29,21 @@ let computerScore = 0;
         //wtf why does this work!? how is the event already attributed to humanChoice? This is setting up that link.... 
         computerChoice = getComputerChoice();
 
-        console.log("Computer: " + computerChoice);
-        console.log("User: " + humanChoice);
+        // console.log("Computer: " + computerChoice);
+        // console.log("User: " + humanChoice);
+        choiceBox.textContent = `You chose ${humanChoice}, Computer chose ${computerChoice}.`
         if (computerChoice === humanChoice) {
-            console.log("Tie");
+            resultBox.textContent = "Tie";
         } else if (computerChoice === "rock" && humanChoice === "paper" ||         // IF getComputerChoice is rock and getHumanChoice is paper, 
             computerChoice === "paper" && humanChoice === "scissors" ||            // or getComputerChoice is paper and getHumanChoice is scissors,
             computerChoice === "scissors" && humanChoice === "rock") {             // or compgetComputerChoice is scissors and getHumanChoice is rock
-                console.log(`User wins, ${humanChoice} beats ${computerChoice}!`);               // THEN print "User Wins"
+                resultBox.textContent = `${humanChoice} beats ${computerChoice}, you win!`;               // THEN print "User Wins" to resultDiv
                 ++ humanScore;
         } else { 
-            console.log(`Computer Wins, ${computerChoice} beats ${humanChoice}!`);
+            resultBox.textContent = `${computerChoice} beats ${humanChoice}, computer Wins!`;
             ++ computerScore;
         }
-        console.log("Score: User: " + humanScore + ", Computer: " + computerScore)
+        scoreBox.textContent = "Score: You: " + humanScore + ", Computer: " + computerScore
     }
 
 //===============================UI Design===============================
@@ -67,8 +68,13 @@ paperBtn.addEventListener('click', playRound);
 scissorsBtn.addEventListener('click', playRound);
 
 //create results notification & score tracker
-let resultBox = document.createElement('div')
+let resultBox = document.createElement('div');
+let scoreBox = document.createElement('div');
+let choiceBox = document.createElement('div');
+
 
 //put the content on the page
 pageBody.appendChild(userChoiceOptions); 
+pageBody.appendChild(choiceBox);
 pageBody.appendChild(resultBox);
+pageBody.appendChild(scoreBox);
