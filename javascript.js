@@ -32,18 +32,30 @@ let computerScore = 0;
         // console.log("Computer: " + computerChoice);
         // console.log("User: " + humanChoice);
         choiceBox.textContent = `You chose ${humanChoice}, Computer chose ${computerChoice}.`
+        gameWinner.textContent = '';
+        
         if (computerChoice === humanChoice) {
             resultBox.textContent = "Tie";
         } else if (computerChoice === "rock" && humanChoice === "paper" ||         // IF getComputerChoice is rock and getHumanChoice is paper, 
             computerChoice === "paper" && humanChoice === "scissors" ||            // or getComputerChoice is paper and getHumanChoice is scissors,
             computerChoice === "scissors" && humanChoice === "rock") {             // or compgetComputerChoice is scissors and getHumanChoice is rock
-                resultBox.textContent = `${humanChoice} beats ${computerChoice}, you win!`;               // THEN print "User Wins" to resultDiv
+                resultBox.textContent = `${humanChoice} beats ${computerChoice}, you win the round!`;               // THEN print "User Wins" to resultDiv
                 ++ humanScore;
         } else { 
-            resultBox.textContent = `${computerChoice} beats ${humanChoice}, computer Wins!`;
+            resultBox.textContent = `${computerChoice} beats ${humanChoice}, computer wins the round!`;
             ++ computerScore;
         }
         scoreBox.textContent = "Score: You: " + humanScore + ", Computer: " + computerScore
+
+        if (computerScore == 5) {
+            gameWinner.textContent = 'Computer scored 5 points, Computer wins the game!'
+            computerScore = 0;
+            humanScore = 0;
+        } else if (humanScore == 5) {
+            gameWinner.textContent = 'You scored 5 points, you win the game!'
+            computerScore = 0;
+            humanScore = 0;
+        } 
     }
 
 //===============================UI Design===============================
@@ -71,6 +83,7 @@ scissorsBtn.addEventListener('click', playRound);
 let resultBox = document.createElement('div');
 let scoreBox = document.createElement('div');
 let choiceBox = document.createElement('div');
+let gameWinner = document.createElement('div');
 
 
 //put the content on the page
@@ -78,3 +91,4 @@ pageBody.appendChild(userChoiceOptions);
 pageBody.appendChild(choiceBox);
 pageBody.appendChild(resultBox);
 pageBody.appendChild(scoreBox);
+pageBody.appendChild(gameWinner);
