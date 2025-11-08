@@ -32,24 +32,6 @@ function getHumanChoice() {
     return userPromptChoice;
 }
 
-        //create 'invalid entry' function
-        // function invalidUserChoice(variable, replacementUserChoice, message) {
-        //     alert(message);
-        //     return variable = replacementUserChoice; // problem here where the replacement value is not being applied. troubleshoot later if feel like it. not actually important for final though.
-        // }
-        //Check response is one of three options
-        // userChoice === "rock" 
-        //     || userChoice === "paper" 
-        //     || userChoice === "scissors" 
-        //     || invalidUserChoice( userChoice, "rock", `invalid entry, please choose one of rock, paper, or scissors next time. Choosing "rock" as your answer`)
-        // if ( !( userChoice === "rock" || userChoice === "paper" || userChoice === "scissors" ) ) {
-        //     invalidUserChoice( userChoice, "rock", `invalid entry, please choose one of rock, paper, or scissors next time. Choosing "rock" as your answer`)}
-        //console.log("checked userChoice = " + userChoice)
-        //(    CHECK user string matches options
-        // IF NOT one of rock paper or scissors
-        // THEN LOG error "user response is not rock paper or scissors, auto loss :("
-        //     (final game will involve an interface with buttons to choose so no need to check string is accurate..... but then caps/not doesnt matter after all... eh. whatev. its the assignment.)
-
 // CREATE win tracking variables
 let userWins = 0, computerWins = 0, ties = 0;
 
@@ -69,26 +51,31 @@ function gameWinner(userChoice, computerChoice) {
         computerWins += 1;
         console.log(`You choose ${userChoice}, computer choose ${computerChoice}, You loose.`);
     } 
-    let scoreMessage = `user Wins: ${userWins} computer Wins:${computerWins} ties:${ties}`;
-    console.log(scoreMessage);
+}
+//CREATE function playGame: run 5 rounds of rock paper scissors and report the total scores
+function playGame() {
+    //CREATE function playRound
+    function playRound () {
+    let computerChoice = getComputerChoice();
+    let userChoice = getHumanChoice();
+    gameWinner(userChoice, computerChoice);
+    }
+
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+
+    let scoreMessage = `user Wins:${userWins} computer Wins:${computerWins} ties:${ties}`;
+    console.log(`final scores: ${scoreMessage}`);
 }
 
-//CREATE function play round
-function playRound () {
-let computerChoice = getComputerChoice();
-let userChoice = getHumanChoice();
-gameWinner(userChoice, computerChoice);
-}
-
-playRound();
+playGame()
 
 /*
-Rock/Paper/Scissors win, recordin, and display logic
-----
-
-LOG variable message to the console
-
-reset game
+ONCE have UI:
+reset game?
 ----
 CREATE function reset
     SET variables userWins computerWins and ties to 0
