@@ -3,6 +3,15 @@
 Create a game of "Rock Paper Scissors"
 played entirely in the console (at this stage)
 
+This game prompts the user to enter one of 'rock, paper, and scissors'
+then compares the entry to a random choice by the computer and writes 
+a message to the console about who won. It also records a point for the
+winner (or tie)
+It does this 5 times, then writes the final score the console window. 
+
+
+
+Original Planning:
 ----------------------
 Assignment Breakdown:
 Steps: 
@@ -23,7 +32,6 @@ Test html to js linked correctly w console.log
 - algo for num rounds decision (5)
 - algo for overall winner
 ----------------------
-
 PSEUDOCODE (ish/rough)
 ----------------------
 Computer Choice
