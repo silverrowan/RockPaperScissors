@@ -63,24 +63,30 @@ let userChoice = getHumanChoice()
         // THEN LOG error "user response is not rock paper or scissors, auto loss :("
         //     (final game will involve an interface with buttons to choose so no need to check string is accurate..... but then caps/not doesnt matter after all... eh. whatev. its the assignment.)
 
+// CREATE win tracking variables
+let userWins = 0, computerWins = 0, ties = 0;
+
 // CREATE Function gameWinnerLogic
-// CREATE variables userWins and computerWins and ties
- //game win logic & entry check: win recording variables created but not used yet
-let userWins, computerWins, ties;
+//game win logic & entry check: win recording variables created but not used yet
+
+
+
 if (userChoice === computerChoice) {
     console.log("You Tie");
+    ties += 1;
 } else if ( !( userChoice === "rock" || userChoice === "paper" || userChoice === "scissors" ) ) {
     console.warn(`invalid entry, please choose one of rock, paper, or scissors next time.`); //checks user responce is a valid choice
 } else if ( userChoice === "rock" && computerChoice === "scissors" 
     || userChoice === "paper" && computerChoice === "rock" 
     || userChoice === "scissors" && computerChoice === "paper" ) {
-        ++userWins;
-        console.log(`You choose ${userChoice}, computer choose ${computerChoice}, You win!`);
+        userWins += 1;
+        console.log(`You choose ${userChoice}, computer choose ${computerChoice}, You win!`);       
 } else {
-    ++computerWins;
+    computerWins += 1;
     console.log(`You choose ${userChoice}, computer choose ${computerChoice}, You loose`);
 } 
-
+let scoreMessage = `user Wins: ${userWins} computer Wins:${computerWins} ties:${ties}`;
+console.log(scoreMessage);
 
 
 /*
