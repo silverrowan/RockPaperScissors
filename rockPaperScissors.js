@@ -22,22 +22,28 @@ function getComputerChoice() {
     } else if (random123 === 3) {
         randomRockPaperScissors = "scissors";
     } else {console.log("variable randomNumber out of bounds");}
-    console.log(randomRockPaperScissors);
     return randomRockPaperScissors;
 }
-let computerChoice = getComputerChoice();
 
+let computerChoice = getComputerChoice();
 
 // Get Human Choice 
 // ----
+//Create Function getHumanChoice
 
-//Create Function cleanText, to trim, lowercase, and de-punctuate responce
-function cleanText (text) {
-    return text.replaceAll(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").trim().toLowerCase();
+function getHumanChoice() {
+    //Create Function cleanText, to trim, lowercase, and de-punctuate responce
+    function cleanText (text) {
+        return text.replaceAll(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").trim().toLowerCase();
+    }
+
+    //prompt user for choice and record in (new) variable userChoice, and clean the string
+    let userPromptChoice = cleanText( prompt("Choose one of: rock, paper, or scissors.", "") );
+    return userPromptChoice;
 }
 
-//prompt user for choice and record in (new) variable userChoice, and clean the string
-let userChoice = cleanText( prompt("Choose one of: rock, paper, or scissors.", "") );
+let userChoice = getHumanChoice()
+
 
         //create 'invalid entry' function
         // function invalidUserChoice(variable, replacementUserChoice, message) {
