@@ -1,10 +1,5 @@
-// Computer Choice
-// ----
-
 //Create function getComputerChoice
-
 function getComputerChoice() {
-
     //declare function: get integer between values a and b, inclusive, a = lowest value, b=highest value
     function randomInteger(a, b) { 
         return Math.floor( Math.random() * b + a );
@@ -25,12 +20,7 @@ function getComputerChoice() {
     return randomRockPaperScissors;
 }
 
-let computerChoice = getComputerChoice();
-
-// Get Human Choice 
-// ----
 //Create Function getHumanChoice
-
 function getHumanChoice() {
     //Create Function cleanText, to trim, lowercase, and de-punctuate responce
     function cleanText (text) {
@@ -41,9 +31,6 @@ function getHumanChoice() {
     let userPromptChoice = cleanText( prompt("Choose one of: rock, paper, or scissors.", "") );
     return userPromptChoice;
 }
-
-let userChoice = getHumanChoice()
-
 
         //create 'invalid entry' function
         // function invalidUserChoice(variable, replacementUserChoice, message) {
@@ -66,12 +53,10 @@ let userChoice = getHumanChoice()
 // CREATE win tracking variables
 let userWins = 0, computerWins = 0, ties = 0;
 
-// CREATE Function gameWinner
-//game win logic & entry check: win recording variables created but not used yet
-
-function gameWinner() {
+// CREATE Function gameWinner: win logic & increase & user entry check
+function gameWinner(userChoice, computerChoice) {
     if (userChoice === computerChoice) {
-        console.log("You Tie");
+        console.log("You Tie.");
         ties += 1;
     } else if ( !( userChoice === "rock" || userChoice === "paper" || userChoice === "scissors" ) ) {
         console.warn(`invalid entry, please choose one of rock, paper, or scissors next time.`); //checks user responce is a valid choice
@@ -82,12 +67,20 @@ function gameWinner() {
             console.log(`You choose ${userChoice}, computer choose ${computerChoice}, You win!`);       
     } else {
         computerWins += 1;
-        console.log(`You choose ${userChoice}, computer choose ${computerChoice}, You loose`);
+        console.log(`You choose ${userChoice}, computer choose ${computerChoice}, You loose.`);
     } 
     let scoreMessage = `user Wins: ${userWins} computer Wins:${computerWins} ties:${ties}`;
     console.log(scoreMessage);
 }
 
+//CREATE function play round
+function playRound () {
+let computerChoice = getComputerChoice();
+let userChoice = getHumanChoice();
+gameWinner(userChoice, computerChoice);
+}
+
+playRound();
 
 /*
 Rock/Paper/Scissors win, recordin, and display logic
