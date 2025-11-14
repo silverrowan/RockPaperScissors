@@ -1,13 +1,41 @@
 # RockPaperScissors
 ---------------------
 Create a game of "Rock Paper Scissors"
-played entirely in the console (at this stage)
+~~played entirely in the console (at this stage)~~
+with a basic Ui!
 
 This game prompts the user to enter one of 'rock, paper, and scissors'
 then compares the entry to a random choice by the computer and writes 
 a message to the console about who won. It also records a point for the
 winner (or tie)
-It does this 5 times, then writes the final score the console window. 
+~~It does this 5 times, then writes the final score the console window.~~
+It logs the score until user or computer scores 5 points and announces the winner.
+
+Changes Needed for UI
+----------------------
+REMOVE 5 rounds logic
+3 buttons - for rock paper scissors
+call playround with an event listener
+
+Display results w a <div>
+change all console.log() to DOM methods
+
+Display running score
+Announce winner once at 5 pts.
+~~~~~~~
+create container for btns
+    Create div for instructions
+    create rock btn (& details)
+    create paper btn
+    create scissors btn
+append buttons & instructiosn to container
+
+create contaner for results
+    create running total div
+    create winner annoucement div
+append divs to container
+
+
 
 
 
