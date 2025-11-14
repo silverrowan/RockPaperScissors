@@ -4,8 +4,43 @@ function randomInteger(a, b) {
         return Math.floor( Math.random() * b + a );
     }
 
-// CREATE win tracking variables
-let userWins = 0, computerWins = 0, ties = 0;
+//Create starting UI
+const gameBody = document.querySelector('.gameFrame');
+let question = `Choose one of: rock, paper, or scissors`
+const questionDiv = document.createElement('div');
+    questionDiv.textContent = question;
+const btnRock = document.createElement('button');
+    btnRock.textContent = "Rock";
+const btnPaper = document.createElement('button');
+    btnPaper.textContent = "Paper";
+const btnScissors = document.createElement('button');
+    btnScissors.textContent = "scissors";
+
+gameBody.appendChild(questionDiv);
+gameBody.appendChild(btnRock);
+gameBody.appendChild(btnPaper);
+gameBody.appendChild(btnScissors);
+
+let userWins = 0, computerWins = 0, ties = 0; // CREATE win tracking variables
+
+const scoreMessage = document.createElement('div');
+    scoreMessage.textContent = `Score: User: ${userWins}, Computer: ${computerWins}, Ties: ${ties}`;
+
+gameBody.appendChild(scoreMessage);
+
+//Add button listeners - try and use only one.
+//listener -> =player choice function
+
+//PLAY A ROUND
+//INCREMENT SCORE (do i need to refresh the score div, or will it update?)
+    //IF either COMPUTER OR USER score = 5, 
+    // then declare them the winner
+
+// let winner = Computer || User --determine from round win logic
+
+const winMessage = document.createElement('div');
+    winMessage.textContent = `${winner} Wins!`;
+
 
 //CREATE function playRound
 function playRound () {
