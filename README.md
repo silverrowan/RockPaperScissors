@@ -1,17 +1,15 @@
 # RockPaperScissors
 ---------------------
-Create a game of "Rock Paper Scissors"
-~~played entirely in the console (at this stage)~~
-with a basic Ui!
+Create a game of "Rock Paper Scissors" with a basic Ui!
 
-This game prompts the user to enter one of 'rock, paper, and scissors'
+This game prompts the user to pick a button for one of 'rock, paper, and scissors'
 then compares the entry to a random choice by the computer and writes 
-a message to the console about who won. It also records a point for the
+a message to the console about who won the round. It also records a point for the
 winner (or tie)
-~~It does this 5 times, then writes the final score the console window.~~
 It logs the score until user or computer scores 5 points and announces the winner.
+Then deactivates the user selection buttons, and creates a 'play again' button, which refreshes the page from cache.
 
-Changes Needed for UI
+## Changes Needed for UI
 ----------------------
 REMOVE 5 rounds logic
 3 buttons - for rock paper scissors
@@ -39,7 +37,7 @@ append divs to container
 
 
 
-Original Planning:
+## Original Planning:
 ----------------------
 Assignment Breakdown:
 Steps: 
@@ -88,7 +86,7 @@ CREATE a function userResponce to collect user response to a question
     CLEAN user string of whitespace and punctuation
     SET variable userResponse with cleaned response    
     
-(    CHECK user string matches options
+    CHECK user string matches options
     IF NOT one of rock paper or scissors
     THEN LOG error "user response is not rock paper or scissors, auto loss :("
         (final game will involve an interface with buttons to choose so no need to check string is accurate..... but then caps/not doesnt matter after all... eh. whatev. its the assignment.)
